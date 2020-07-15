@@ -14,17 +14,17 @@ export default class BagX extends bgxStore{
         }
     }
 
-    mutate(stateKey,payload=null) {
-       if (typeof stateKey === 'string'){
-        this.state[stateKey] = payload;
+    mutate(stateFeature,payload=null) {
+       if (typeof stateFeature === 'string'){
+        this.state[stateFeature] = payload;
         } else {
             throw 'stateKey must be in string';
         }
     }
 
-    publish(key='') {
-        if ((typeof key === 'string') & (key !== '')) {
-           return this.state[key];
+    publish(stateFeature='') {
+        if ((typeof stateFeature === 'string') & (stateFeature !== '')) {
+           return this.state[stateFeature];
         } else if (key === '') {
             return this.state
         } else {
