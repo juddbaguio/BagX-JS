@@ -22,10 +22,10 @@ export default class BagX extends bgxStore{
         }
     }
 
-    publish(stateFeature='') {
-        if ((typeof stateFeature === 'string') & (stateFeature !== '')) {
+    publish(stateFeature=null) {
+        if ((typeof stateFeature === 'string')) {
            return this.state[stateFeature];
-        } else if (key === '') {
+        } else if (stateFeature === null) {
             return this.state
         } else {
             throw 'The argument `key` must be in string.'
